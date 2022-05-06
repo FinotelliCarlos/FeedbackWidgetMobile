@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
+import { Widget } from './src/components/Widget';
 
 export default function App() {
   return (
-    <View>
-      <StatusBar style="auto" />
-      <Text>Hello</Text>
-    </View>
+    <>
+      <StatusBar style="dark" />
+      <Widget />
+    </>
   );
 }
