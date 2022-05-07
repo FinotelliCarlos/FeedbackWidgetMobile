@@ -1,12 +1,12 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React from 'react'
+import { Text, View } from 'react-native'
 
-import { styles } from './styles';
+import { styles } from './styles'
 
 export function Copyright() {
   return (
-    <View style={styles.container}>
+    <View>
       <Text style={styles.text}>Feito pora Finotelli</Text>
     </View>
-  );
+  )
 }
