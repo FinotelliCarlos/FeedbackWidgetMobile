@@ -38,4 +38,8 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.regular,
     textAlign: 'center',
   },
+  footer: {
+    flexDirection: 'row',
+    marginBottom: 16,
+  },
 });
