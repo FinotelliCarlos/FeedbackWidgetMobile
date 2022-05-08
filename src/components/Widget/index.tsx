@@ -3,7 +3,6 @@ import { TouchableOpacity } from 'react-native'
 import { ChatTeardropDots } from 'phosphor-react-native'
 import BottomSheet from '@gorhom/bottom-sheet'
 import { gestureHandlerRootHOC } from 'react-native-gesture-handler'
-
 import { feedbackTypes } from '../../utils/feedbackTypes'
 
 import { Form } from '../Form'
@@ -37,7 +36,8 @@ function Widget() {
         backgroundStyle={styles.modal}
         handleIndicatorStyle={styles.indicator}
       >
-        <Success />
+        <Form feedbackType="OTHER" />
+        CaptureScreen
       </BottomSheet>
     </>
   )

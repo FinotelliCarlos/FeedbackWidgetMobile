@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, TextInput, Image, Text, TouchableOpacity } from 'react-native'
 import { ArrowLeft } from 'phosphor-react-native'
+import { captureScreen } from 'react-native-view-shot'
 
 import { styles } from './styles'
 import { theme } from '../../theme'
@@ -14,7 +15,23 @@ interface Props {
 }
 
 export function Form({ feedbackType }: Props) {
+
+  const [screenshot, setScreenshot] = useState<string | null>(null)
+
   const feedbackTypeInfo = feedbackTypes[feedbackType]
+
+  function takeScreenshot(){
+    captureScreen({
+      format: 'jpg',
+      quality: 0.8,
+    })
+    .then(uri => setScreenshot(uri))
+    .catch(error => console.log(error))
+  }
+
+  function removeScreenshot(){
+    setScreenshot(null)
+  }
 
   return (
     <View style={styles.container}>
@@ -40,9 +57,9 @@ export function Form({ feedbackType }: Props) {
       />
       <View style={styles.footer}>
         <ScreenshotButton 
-          onTakeShot={() => {}}
-          onRemoveShot={() => {}}
-          screenshot=''
+          onTakeShot={takeScreenshot}
+          onRemoveShot={removeScreenshot}
+          screenshot={screenshot}
         />
         <Button 
           isLoading={false}
