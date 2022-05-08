@@ -45,7 +45,7 @@ export function Form({ feedbackType }: Props) {
           screenshot=''
         />
         <Button 
-          isLoading={true}
+          isLoading={false}
         />
       </View>
 
