@@ -19,8 +19,8 @@ export function Form({ feedbackType }: Props) {
   const [screenshot, setScreenshot] = useState<string | null>(null)
 
   const feedbackTypeInfo = feedbackTypes[feedbackType]
-
-  function takeScreenshot(){
+  
+  function handleScreenshot(){
     captureScreen({
       format: 'jpg',
       quality: 0.8,
@@ -57,7 +57,7 @@ export function Form({ feedbackType }: Props) {
       />
       <View style={styles.footer}>
         <ScreenshotButton 
-          onTakeShot={takeScreenshot}
+          onTakeShot={handleScreenshot}
           onRemoveShot={removeScreenshot}
           screenshot={screenshot}
         />
